@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: rag_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # fastapi:
+  #   build: .
+  #   container_name: rag_app
+  #   restart: always
+  #   depends_on:
+  #     - postgres
+  #   environment:
+  #     DATABASE_URL: postgresql://postgres:mysecretpassword@postgres:5432/rag_db
+  #   ports:
+  #     - "8000:8000"
+
+volumes:
+  pgdata:

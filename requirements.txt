@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+ollama
+pydantic-ai
+pgvector
+psycopg2-binary
+pdf2image
+pytesseract
+numpy
+pillow
+torch
+transformers
+langchain
+openai
+python-multipart
